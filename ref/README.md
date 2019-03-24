@@ -1,6 +1,7 @@
 # ref
 - **INCREASE THE MID GROUND PNG 2.5x** so from 4000x2000 to 10000x5000
-- refer to ref8.png for the numbers in parenthesis below 
+- refer to ref8.png for the numbers in parenthesis below
+- The red rectangle represents the screen, and the circle represents the circle of visibility with the darkness
 - (1) the red line shows how high the player can jump, so they can't make this ledge which could the intention
 - (2) same as above
 - (3) this ledge is just a bit short (ref4.png)
