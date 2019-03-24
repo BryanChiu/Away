@@ -1,8 +1,10 @@
 # ref
-- **INCREASE THE MID GROUND PNG 2.5x**
-- the red line shows how high the player can jump, so they can't make (1) which could the intention
-- player can't jump up to (2), also could be intention
+- **INCREASE THE MID GROUND PNG 2.5x** so from 4000x2000 to 10000x5000
+- refer to ref8.png for the numbers in parenthesis below 
+- (1) the red line shows how high the player can jump, so they can't make this ledge which could the intention
+- (2) same as above
 - (3) this ledge is just a bit short (ref4.png)
-- player doesn't fit through holes (4) and (5), but does fit through (6)... maybe the intention??
-- the ceiling is too high (7), you can't really see it while playing (ref2.png)
+- (4)(5) player doesn't fit through holes
+- (6) player DOES fit through this hole
+- (7) the ceiling is too high, you can't really see it while playing (ref2.png)
 - other images are reference to player size
