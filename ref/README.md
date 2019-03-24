@@ -1,5 +1,5 @@
 # ref
-- **INCREASE THE MID GROUND 2.5x**
+- **INCREASE THE MID GROUND PNG 2.5x**
 - the red line shows how high the player can jump, so they can't make (1) which could the intention
 - player can't jump up to (2), also could be intention
 - (3) this ledge is just a bit short (ref4.png)
