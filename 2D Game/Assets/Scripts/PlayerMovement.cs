@@ -20,7 +20,9 @@ public class PlayerMovement : MonoBehaviour {
 
 	float horizontalMove = 0f;
 	bool jump = false;
-	bool dead = false;
+	public bool dead;
+	public bool levelCompleted;
+
 
 	private CircleCollider2D feet;
 
@@ -28,9 +30,11 @@ public class PlayerMovement : MonoBehaviour {
 		feet = GetComponent<CircleCollider2D>();
 		feet.sharedMaterial = nofriction;
 		notesGathered = 0;
+		dead = false;
 
 		notesTotal = GameObject.FindGameObjectsWithTag("Note").Length;
 		noteUI = GameObject.Find("NoteUI");
+		levelCompleted = false;
 	}
 
 	// Update is called once per frame
@@ -61,7 +65,6 @@ public class PlayerMovement : MonoBehaviour {
 		// }
 
 		if (transform.position.y < -30f) {
-			Time.timeScale = 0.0f;
 			dead = true;
 		}
 
@@ -77,17 +80,26 @@ public class PlayerMovement : MonoBehaviour {
 	// 	animator.SetBool("IsCrouching", isCrouching);
 	// }
 
-	void OnCollisionEnter2D(Collision2D collision) {
+	void OnCollisionEnter2D(Collision2D collision) { //monster kill
 		// jump = false;
 		if (collision.gameObject.tag == "Monster") {
 			dead = true;
+		} 
+	}
+
+	void OnTriggerStay2D(Collider2D collider) {
+		if (collider.gameObject.tag == "Exit") {
+			levelCompleted = true;
 		}
 	}
 
 	void FixedUpdate ()
 	{
 		// Move our character
-		controller.Move(horizontalMove * Time.fixedDeltaTime, false, jump);
+		if (!dead) {
+			controller.Move(horizontalMove * Time.fixedDeltaTime, false, jump);
+		}
+
 		jump = false;
 
 		noteUI.GetComponent<Text>().text = "Notes gather: "+notesGathered.ToString()+" / "+notesTotal.ToString();

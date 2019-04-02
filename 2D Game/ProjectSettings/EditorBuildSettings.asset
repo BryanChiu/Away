@@ -5,7 +5,19 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
-    path: Assets/2D Platformer Controller/Scenes/Demo.unity
+  - enabled: 0
+    path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/MainMenu.unity
+    guid: 9b9fe82462c90d94387bb580a182e3c3
+  - enabled: 1
+    path: Assets/Main.unity
+    guid: 548efbe8196c7bb41a94d25d70cf82e6
+  - enabled: 1
+    path: Assets/GameOver.unity
+    guid: 49204d97b91bba5458a7a133fbaea2fa
+  - enabled: 1
+    path: Assets/LevelComplete.unity
+    guid: ad9dd9da9c83c2e43b5b111795657038
   m_configObjects: {}
