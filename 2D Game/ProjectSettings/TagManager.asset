@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Through
+  - Monster
+  - Note
   layers:
   - Default
   - TransparentFX
@@ -16,7 +18,7 @@ TagManager:
   - 
   - Player
   - Obstacle
-  - 
+  - Darkness
   - 
   - 
   - 
@@ -44,4 +46,13 @@ TagManager:
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Foreground
+    uniqueID: 1597783947
+    locked: 0
+  - name: Darkness
+    uniqueID: 1003278831
+    locked: 0
+  - name: GUI
+    uniqueID: 1812440375
     locked: 0

@@ -6,6 +6,7 @@ public class CameraController : MonoBehaviour {
 
     public GameObject player;       //Public variable to store a reference to the player game object
     public Camera cam;
+    private GameObject[] monsters;
 
     public float xOffset;
     public float yOffset;
@@ -35,19 +36,28 @@ public class CameraController : MonoBehaviour {
         CameraSpeed = 0.04f;
 
         MAX_SIZE = 7f;
-        MIN_SIZE = 5f;
+        MIN_SIZE = 4f;
         scaleVelocity = 0f;
-        scale = 5f;
+        scale = 7f;
 
         CharacterLastPosition = player.transform.position;
+
+        monsters = GameObject.FindGameObjectsWithTag("Monster");
     }
     
 
     void FixedUpdate() {
 		CharacterSpeed = Mathf.Abs(player.transform.position.x - CharacterLastPosition.x)*50;
     	CharacterLastPosition = player.transform.position;
+        bool playerTargeted = false;
 
-        if (CharacterSpeed>0) {
+        foreach (GameObject monst in monsters) {
+            if (monst.GetComponent<MonsterMovement>().targeting) {
+                playerTargeted = true;
+            }
+        }
+
+        if (CharacterSpeed>0 && !playerTargeted) {
             if (scale<MAX_SIZE) {
                 scaleVelocity = Mathf.MoveTowards(Mathf.Max(0f, scaleVelocity), 0.03f, 0.0005f);
                 scale += scaleVelocity;
