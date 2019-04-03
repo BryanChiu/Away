@@ -17,6 +17,7 @@ public class PlayerMovement : MonoBehaviour {
 	private int notesTotal;
 	public int notesGathered;
 	private GameObject noteUI;
+	private GameObject uiBack;
 
 	float horizontalMove = 0f;
 	bool jump = false;
@@ -56,16 +57,13 @@ public class PlayerMovement : MonoBehaviour {
 			animator.SetBool("IsJumping", true);
 		}
 
-		// if (Input.GetButtonDown("Crouch"))
-		// {
-		// 	crouch = true;
-		// } else if (Input.GetButtonUp("Crouch"))
-		// {
-		// 	crouch = false;
-		// }
-
 		if (transform.position.y < -30f) {
 			dead = true;
+		}
+
+		if (dead) {
+			transform.Rotate(0f, 0f, 1f, Space.Self);
+			GameObject.Find("Main Camera").GetComponent<com.cortastudios.DynamicColorCorrection.ColorCurvesManager>().Factor+=0.05f;
 		}
 
 	}
@@ -74,11 +72,6 @@ public class PlayerMovement : MonoBehaviour {
 	{
 		animator.SetBool("IsJumping", false);
 	}
-
-	// public void OnCrouching (bool isCrouching)
-	// {
-	// 	animator.SetBool("IsCrouching", isCrouching);
-	// }
 
 	void OnCollisionEnter2D(Collision2D collision) { //monster kill
 		// jump = false;
@@ -89,7 +82,22 @@ public class PlayerMovement : MonoBehaviour {
 
 	void OnTriggerStay2D(Collider2D collider) {
 		if (collider.gameObject.tag == "Exit") {
-			levelCompleted = true;
+			if (notesGathered==notesTotal) {
+				levelCompleted = true;
+			} else {
+				Color col = noteUI.GetComponent<Text>().color;
+				if (Time.frameCount%30<=14) {
+					noteUI.GetComponent<Text>().color = new Color(Mathf.Clamp(col.r+0.03f, 0f, 1f), Mathf.Clamp(col.r+0.03f, 0f, 1f), Mathf.Clamp(col.r+0.03f, 0f, 1f), 1f);
+				} else {
+					noteUI.GetComponent<Text>().color = new Color(Mathf.Clamp(col.r-0.03f, 0f, 1f), Mathf.Clamp(col.r-0.03f, 0f, 1f), Mathf.Clamp(col.r-0.03f, 0f, 1f), 1f);
+				}
+			}
+		}
+	}
+
+	void OnTriggerExit2D(Collider2D collider) {
+		if (collider.gameObject.tag == "Exit") {
+			noteUI.GetComponent<Text>().color = new Color(0.54f, 0.54f, 0.54f, 1f);
 		}
 	}
 
@@ -102,6 +110,6 @@ public class PlayerMovement : MonoBehaviour {
 
 		jump = false;
 
-		noteUI.GetComponent<Text>().text = "Notes gather: "+notesGathered.ToString()+" / "+notesTotal.ToString();
+		noteUI.GetComponent<Text>().text = "Notes gathered: "+notesGathered.ToString()+" / "+notesTotal.ToString();
 	}
 }
