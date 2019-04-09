@@ -34143,7 +34143,7 @@ PrefabInstance:
     - target: {fileID: 6045278518461197583, guid: 81f683ccac046aa4db48bbca7fcc5e41,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6045278518461197577, guid: 81f683ccac046aa4db48bbca7fcc5e41,
         type: 3}
@@ -34310,30 +34310,30 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6045278518980365965, guid: 81f683ccac046aa4db48bbca7fcc5e41,
-        type: 3}
-      propertyPath: m_havePropertiesChanged
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6045278518980365965, guid: 81f683ccac046aa4db48bbca7fcc5e41,
-        type: 3}
-      propertyPath: m_isInputParsingRequired
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6045278520013399319, guid: 81f683ccac046aa4db48bbca7fcc5e41,
-        type: 3}
-      propertyPath: m_havePropertiesChanged
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6045278520013399319, guid: 81f683ccac046aa4db48bbca7fcc5e41,
-        type: 3}
-      propertyPath: m_isInputParsingRequired
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6045278519788817960, guid: 81f683ccac046aa4db48bbca7fcc5e41,
         type: 3}
       propertyPath: m_RaycastTarget
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045278518980365965, guid: 81f683ccac046aa4db48bbca7fcc5e41,
+        type: 3}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045278518980365965, guid: 81f683ccac046aa4db48bbca7fcc5e41,
+        type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045278520013399319, guid: 81f683ccac046aa4db48bbca7fcc5e41,
+        type: 3}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045278520013399319, guid: 81f683ccac046aa4db48bbca7fcc5e41,
+        type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81f683ccac046aa4db48bbca7fcc5e41, type: 3}
